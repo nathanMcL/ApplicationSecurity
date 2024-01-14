@@ -9,8 +9,8 @@ def hello():
 @app.route("/submit", methods=["POST"])
 def submit():
     input_data = request.form['inputField']
-    # Process input_data as needed
-    return "Received: " + input_data
+    # Render the result template with the input data
+    return render_template("results.html", submitted_data=input_data)
 
 
 if __name__ == "__main__":
